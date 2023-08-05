@@ -138,7 +138,7 @@ textarea {
 }
 
 .btn-submit:hover {
-  transition: var(--transition);
   background: #5d3c0b;
   color: var(--clr-white);
+  transition: var(--transition);
 }

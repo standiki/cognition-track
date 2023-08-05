@@ -1,6 +1,6 @@
 import React from "react";
 
-function SinglePost() {
+function SingleThread() {
   return (
     <div>
       <h2>view single post</h2>
@@ -8,4 +8,4 @@ function SinglePost() {
   );
 }
 
-export default SinglePost;
+export default SingleThread;

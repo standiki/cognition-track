@@ -94,12 +94,12 @@ button {
   padding: 5rem 0;
 }
 
-/* Post App */
-
 .title {
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
+/* Add thread */
 
 form {
   display: flex;
@@ -141,4 +141,25 @@ textarea {
   background: #5d3c0b;
   color: var(--clr-white);
   transition: var(--transition);
+}
+
+/* Threads */
+.thread-container {
+  margin-top: 4.5rem;
+}
+
+.threads {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.thread {
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.thread h3 {
+  color: #c59d5f;
 }

@@ -148,10 +148,9 @@ textarea {
   margin-top: 4.5rem;
 }
 
-.threads {
+.threads-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 2rem;
 }
 
@@ -160,6 +159,21 @@ textarea {
   letter-spacing: 1px;
 }
 
+.thread .title {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
 .thread h3 {
   color: #c59d5f;
+}
+
+.thread-btn {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: transparent;
+  cursor: pointer;
 }

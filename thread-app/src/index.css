@@ -8,7 +8,6 @@ CSS Variables
   --clr-grey-main: hsl(210, 22%, 49%);
   --clr-white: #fff;
   --clr-black: #222;
-  --clr-gold: #c59d5f;
   --transition: all 0.6s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -37,15 +36,15 @@ body {
   line-height: var(--line-height);
 }
 
-h1 {
-  color: var(--clr-grey-main);
+h3 {
   letter-spacing: var(--spacing);
   line-height: var(--line-height);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
 }
 
-h1 {
-  font-size: 2em;
+h3 {
+  font-size: 1.25rem;
 }
 
 p {
@@ -54,7 +53,7 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-  h1 {
+  h3 {
     font-size: 1.75rem;
     line-height: 1;
   }
@@ -81,23 +80,26 @@ p {
 }
 
 button {
-  color: var(--clr-gold);
   font-family: inherit;
-  border: none;
+  font-size: 1rem;
+  text-transform: capitalize;
   cursor: pointer;
-  background: none;
+  background: #c59d5f;
+  color: var(--clr-grey);
+  border: none;
+  border-radius: var(--radius);
 }
 
 .padding {
   padding: 5rem 0;
 }
 
+/* Post App */
+
 .title {
   margin-bottom: 1.5rem;
   text-align: center;
 }
-
-/* Add thread */
 
 form {
   display: flex;
@@ -113,9 +115,8 @@ textarea {
   width: 100%;
   padding: 0.25rem;
   padding-left: 0.5rem;
-  border: 0.1px solid var(--clr-gold);
+  border: 0.1px solid #c59d5f;
   border-radius: var(--radius);
-  color: var(--clr-grey-main);
 }
 
 input {
@@ -129,100 +130,15 @@ textarea {
 }
 
 .btn-submit {
+  margin-top: 0.35rem;
   width: 100%;
-}
-
-.btn-submit {
   flex: 0 0 2.3rem;
   align-self: flex-end;
-  margin-top: 0.35rem;
   max-width: 180px;
-  font-size: 1rem;
-  color: var(--clr-grey);
-  background: var(--clr-gold);
-  text-transform: capitalize;
-  border-radius: var(--radius);
 }
 
 .btn-submit:hover {
   background: #5d3c0b;
   color: var(--clr-white);
   transition: var(--transition);
-}
-
-/* Threads */
-
-.thread-container {
-  margin-top: 4.5rem;
-}
-
-.thread {
-  text-align: left;
-  letter-spacing: 1px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: var(--max-width);
-}
-
-.thread-heading {
-  margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.875rem;
-}
-
-.thread-heading button {
-  padding: 0;
-}
-
-.thread-heading h1 {
-  text-align: left;
-  color: var(--clr-gold);
-  word-break: break-word;
-}
-
-.heading-icons {
-  display: flex;
-  align-items: baseline;
-  gap: 1.22rem;
-}
-
-.heading-icons button {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-/* Single thread */
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  background: hsl(0, 1%, 22%);
-  transition: var(--transition);
-  z-index: 1;
-}
-
-.overlay .container {
-  position: relative;
-  width: 80vw;
-  max-width: var(--max-width);
-  text-align: left;
-  border-radius: var(--radius);
-}
-
-.back-btn {
-  display: flex;
-  align-items: center;
-  gap: 6.5px;
-  font-weight: 700;
-  background: transparent;
-  border-color: transparent;
-  color: #c59d5f;
 }

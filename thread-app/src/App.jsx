@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import AddThread from "./components/AddThread";
-import Threads from "./components/Threads";
+import ThreadFeed from "./components/ThreadFeed";
+// import SingleThread from "./components/ViewSingleThread";
 
 import { nanoid } from "nanoid";
 
@@ -8,7 +9,9 @@ function App() {
   const [threads, setThreads] = useState([]);
   const [threadTitle, setThreadTitle] = useState("");
   const [threadContent, setThreadContent] = useState("");
+  const [iSEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [editId, setEditId] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,12 +46,14 @@ function App() {
     setThreadContent(e.target.value);
   };
 
-  console.log(threads);
+  // function for matching id
+
+  // console.log(threads);
 
   return (
     <section className="padding App">
       <div className="title">
-        <h3>thread app</h3>
+        <h1>Thread App</h1>
       </div>
       <AddThread
         title={threadTitle}
@@ -57,6 +62,9 @@ function App() {
         handleTitleChange={handleTitleChange}
         handleContentChange={handleContentChange}
       />
+      <div>
+        <ThreadFeed threads={threads} />
+      </div>
     </section>
   );
 }

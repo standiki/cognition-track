@@ -48,7 +48,7 @@ function App() {
   return (
     <section className="padding App">
       <div className="title">
-        <h3>thread app</h3>
+        <h1>Thread App</h1>
       </div>
       <AddThread
         title={threadTitle}

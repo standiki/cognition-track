@@ -1,29 +1,49 @@
 import { useState } from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import SingleThread from "./ViewSingleThread";
 
 function ThreadsList({ threads }) {
   const [readMore, setReadMore] = useState(false);
 
+  const handleReadMore = (id) => {
+    setReadMore(!readMore);
+  };
+
   return (
-    <div className="threads-container">
-      {/* <h2>Posted threads will show here</h2> */}
+    <div className="thread-container">
       {threads.map((thread) => {
         const { id, title, content } = thread;
         return (
-          <article key={id} className="thread">
-            <div className="title">
-              <h3>{title}</h3>
-              <div className="thread-btn">
-                <FaTrash />
-                <FaEdit />
+          <article key={id} className="thread" style={{ width: "100%" }}>
+            <div className="thread-heading">
+              <button onClick={handleReadMore}>
+                <h1>{title}</h1>
+              </button>
+              <div className="heading-icons">
+                <button>
+                  <FaEdit />
+                </button>
+                <button>
+                  <FaTrash />
+                </button>
               </div>
             </div>
-            <p>
-              {readMore ? content : content.substring(0, 200)}
-              <button onClick={() => setReadMore(!readMore)}>
-                {readMore ? "show less" : "read more"}
+            <div className="thread-paragraph">
+              <>
+                {readMore ? (
+                  <SingleThread
+                    handleReadMore={handleReadMore}
+                    thread={thread}
+                  />
+                ) : (
+                  <p>{`${content.substring(0, 200)}...`}</p>
+                )}
+              </>
+              <button className="view-thread_btn" onClick={handleReadMore}>
+                View entire post
               </button>
-            </p>
+            </div>
+            <hr />
           </article>
         );
       })}

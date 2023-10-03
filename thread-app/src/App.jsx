@@ -43,7 +43,7 @@ function App() {
     setThreadContent(e.target.value);
   };
 
-  console.log(threads);
+  // console.log(threads);
 
   return (
     <section className="padding App">
@@ -57,6 +57,9 @@ function App() {
         handleTitleChange={handleTitleChange}
         handleContentChange={handleContentChange}
       />
+      <div className="thread-container">
+        <Threads threads={threads} />
+      </div>
     </section>
   );
 }

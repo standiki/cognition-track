@@ -6,6 +6,7 @@ function ThreadsList({ threads }) {
   const [readMore, setReadMore] = useState(false);
 
   const handleReadMore = (id) => {
+    console.log(id);
     setReadMore(!readMore);
   };
 
@@ -15,11 +16,11 @@ function ThreadsList({ threads }) {
         const { id, title, content } = thread;
         return (
           <article key={id} className="thread" style={{ width: "100%" }}>
-            <div className="thread-heading">
+            <div className="heading thread-heading">
               <button onClick={handleReadMore}>
                 <h1>{title}</h1>
               </button>
-              <div className="heading-icons">
+              <div className="icons">
                 <button>
                   <FaEdit />
                 </button>
@@ -44,6 +45,7 @@ function ThreadsList({ threads }) {
               </button>
             </div>
             <hr />
+            <div className="clear__fix"></div>
           </article>
         );
       })}
